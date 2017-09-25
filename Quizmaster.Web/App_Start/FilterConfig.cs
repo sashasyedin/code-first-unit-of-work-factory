@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Quizmaster
+namespace Quizmaster.Web
 {
     public class FilterConfig
     {

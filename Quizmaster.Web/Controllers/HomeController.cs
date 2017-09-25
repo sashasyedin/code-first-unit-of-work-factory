@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Quizmaster.Controllers
+namespace Quizmaster.Web.Controllers
 {
     public class HomeController : Controller
     {
