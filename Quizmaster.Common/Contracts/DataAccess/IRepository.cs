@@ -7,18 +7,16 @@ namespace Quizmaster.Common.Contracts
     public interface IRepository<T>
         where T : IEntity
     {
-        int Add(T model);
+        T Add(T entity);
 
-        bool Delete(int id);
+        void Delete(T entity);
 
-        T Get(int id);
+        T Get(object id);
 
-        T Get(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
 
         IEnumerable<T> GetAll();
 
-        IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate);
-
-        bool Update(T model);
+        void Update(T entity);
     }
 }
