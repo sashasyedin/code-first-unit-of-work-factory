@@ -16,6 +16,7 @@ namespace Quizmaster.Common.Contracts
     }
 
     public interface IEntity<T> : IEntity
+        where T : struct
     {
         new T Id { get; set; }
     }
