@@ -1,21 +1,24 @@
 ﻿using System;
+using System.Data;
 using System.Data.Entity;
 using Quizmaster.Common.Contracts;
 
 namespace Quizmaster.DataAccess
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly DbContext _context;
+        private readonly DbContextTransaction _transaction;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(IContextFactory<DbContext> contextFactory, IsolationLevel isolationLevel)
         {
-            this._context = context;
+            this._context = contextFactory.GetCurrentContext();
+            this._transaction = this._context.Database.BeginTransaction(isolationLevel);
         }
 
         public void Commit()
         {
-            this._context.SaveChanges();
+            this._transaction.Commit();
         }
 
         public void Dispose()
@@ -24,13 +27,23 @@ namespace Quizmaster.DataAccess
             GC.SuppressFinalize(this);
         }
 
+        public void Rollback()
+        {
+            this._transaction.Rollback();
+        }
+
+        public void SaveChanges()
+        {
+            this._context.SaveChanges();
+        }
+
         private void Dispose(bool disposing)
         {
             if (disposing == false)
                 return;
 
-            if (this._context != null)
-                this._context.Dispose();
+            this._context?.Dispose();
+            this._transaction?.Dispose();
         }
     }
 }

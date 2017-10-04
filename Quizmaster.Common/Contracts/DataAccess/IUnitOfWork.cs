@@ -1,9 +1,11 @@
-﻿using System;
-
-namespace Quizmaster.Common.Contracts
+﻿namespace Quizmaster.Common.Contracts
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
         void Commit();
+
+        void Rollback();
+
+        void SaveChanges();
     }
 }

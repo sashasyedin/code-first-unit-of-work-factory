@@ -10,6 +10,6 @@ namespace Quizmaster.Entities
         public int QuestionId { get; set; }
 
         [ForeignKey("QuestionId")]
-        public Question Question { get; set; }
+        public virtual Question Question { get; set; }
     }
 }

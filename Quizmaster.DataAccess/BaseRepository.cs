@@ -7,13 +7,13 @@ using Quizmaster.Common.Contracts;
 
 namespace Quizmaster.DataAccess
 {
-    public abstract class EfBaseRepository<T> : IRepository<T>
+    public abstract class BaseRepository<T> : IRepository<T>
         where T : class, IEntity
     {
         private readonly DbContext _context;
         private IDbSet<T> _entities;
 
-        public EfBaseRepository(DbContext context)
+        public BaseRepository(DbContext context)
         {
             this._context = context;
         }

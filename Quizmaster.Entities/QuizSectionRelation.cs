@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Quizmaster.Entities
 {
     [Table("TestSectionRelation")]
-    public class TestSectionRelation
+    public class TestSectionRelation : Entity<int>
     {
         [Key, Column(Order = 0)]
         public int QuizId { get; set; }
@@ -15,9 +15,9 @@ namespace Quizmaster.Entities
         public double CommonPercent { get; set; }
 
         [ForeignKey("QuizId")]
-        public Quiz Quiz { get; set; }
+        public virtual Quiz Quiz { get; set; }
 
         [ForeignKey("SectionId")]
-        public Section Section { get; set; }
+        public virtual Section Section { get; set; }
     }
 }

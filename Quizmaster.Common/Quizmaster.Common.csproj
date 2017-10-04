@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\DataAccess\IContextFactory.cs" />
     <Compile Include="Contracts\DataAccess\IRepository.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWork.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWorkFactory.cs" />
     <Compile Include="Contracts\Entities\IEntity.cs" />
     <Compile Include="Contracts\Entities\IModifiableEntity.cs" />
-    <Compile Include="Helpers\TransactionScopeBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
