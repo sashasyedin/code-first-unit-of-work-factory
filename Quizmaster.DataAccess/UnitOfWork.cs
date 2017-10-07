@@ -10,9 +10,9 @@ namespace Quizmaster.DataAccess
         private readonly DbContext _context;
         private readonly DbContextTransaction _transaction;
 
-        public UnitOfWork(IContextFactory<DbContext> contextFactory, IsolationLevel isolationLevel)
+        public UnitOfWork(IContextFactory contextFactory, IsolationLevel isolationLevel)
         {
-            this._context = contextFactory.GetCurrentContext();
+            this._context = contextFactory.GetCurrentContext<DbContext>();
             this._transaction = this._context.Database.BeginTransaction(isolationLevel);
         }
 
@@ -42,8 +42,8 @@ namespace Quizmaster.DataAccess
             if (disposing == false)
                 return;
 
-            this._context?.Dispose();
             this._transaction?.Dispose();
+            this._context?.Dispose();
         }
     }
 }

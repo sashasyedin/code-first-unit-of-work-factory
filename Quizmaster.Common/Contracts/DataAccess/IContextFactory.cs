@@ -1,7 +1,7 @@
 ﻿namespace Quizmaster.Common.Contracts
 {
-    public interface IContextFactory<T>
+    public interface IContextFactory
     {
-        T GetCurrentContext();
+        T GetCurrentContext<T>();
     }
 }
