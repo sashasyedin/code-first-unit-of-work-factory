@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.Entity;
+using CuttingEdge.Conditions;
 using Quizmaster.Common.Contracts;
 
 namespace Quizmaster.DataAccess
@@ -10,9 +11,12 @@ namespace Quizmaster.DataAccess
         private readonly DbContext _context;
         private readonly DbContextTransaction _transaction;
 
-        public UnitOfWork(IContextFactory contextFactory, IsolationLevel isolationLevel)
+        public UnitOfWork(DbContext context, IsolationLevel isolationLevel)
         {
-            this._context = contextFactory.GetCurrentContext<DbContext>();
+            Condition.Requires(context, nameof(context)).IsNotNull();
+            Condition.Requires(isolationLevel, nameof(isolationLevel)).IsNotEqualTo(IsolationLevel.Unspecified);
+
+            this._context = context;
             this._transaction = this._context.Database.BeginTransaction(isolationLevel);
         }
 

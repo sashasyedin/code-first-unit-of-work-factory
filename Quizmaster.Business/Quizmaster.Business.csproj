@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\QuestionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quizmaster.Common\Quizmaster.Common.csproj">

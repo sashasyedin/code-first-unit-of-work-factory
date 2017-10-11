@@ -1,22 +1,27 @@
 ﻿using System.Data;
+using System.Data.Entity;
+using CuttingEdge.Conditions;
 using Quizmaster.Common.Contracts;
 
 namespace Quizmaster.DataAccess
 {
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
-        private readonly IContextFactory _contextFactory;
+        private readonly DbContext _context;
         private readonly IsolationLevel _isolationLevel;
 
-        public UnitOfWorkFactory(IContextFactory contextFactory, IsolationLevel isolationLevel)
+        public UnitOfWorkFactory(DbContext context, IsolationLevel isolationLevel)
         {
-            this._contextFactory = contextFactory;
+            Condition.Requires(context, nameof(context)).IsNotNull();
+            Condition.Requires(isolationLevel, nameof(isolationLevel)).IsNotEqualTo(IsolationLevel.Unspecified);
+
+            this._context = context;
             this._isolationLevel = isolationLevel;
         }
 
         public IUnitOfWork Create()
         {
-            return new UnitOfWork(this._contextFactory, this._isolationLevel);
+            return new UnitOfWork(this._context, this._isolationLevel);
         }
     }
 }

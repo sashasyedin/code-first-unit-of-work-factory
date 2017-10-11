@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\DataAccess\IContextFactory.cs" />
+    <Compile Include="Contracts\Business\Services\IQuestionService.cs" />
     <Compile Include="Contracts\DataAccess\IRepository.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWork.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWorkFactory.cs" />
+    <Compile Include="Contracts\DataAccess\Repositories\IQuestionRepository.cs" />
     <Compile Include="Contracts\Entities\IEntity.cs" />
     <Compile Include="Contracts\Entities\IModifiableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
