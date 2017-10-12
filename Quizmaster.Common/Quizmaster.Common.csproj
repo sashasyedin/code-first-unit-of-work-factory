@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -45,9 +46,14 @@
     <Compile Include="Contracts\DataAccess\IRepository.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWork.cs" />
     <Compile Include="Contracts\DataAccess\IUnitOfWorkFactory.cs" />
-    <Compile Include="Contracts\DataAccess\Repositories\IQuestionRepository.cs" />
     <Compile Include="Contracts\Entities\IEntity.cs" />
     <Compile Include="Contracts\Entities\IModifiableEntity.cs" />
+    <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Quiz.cs" />
+    <Compile Include="Entities\QuizSectionRelation.cs" />
+    <Compile Include="Entities\Section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

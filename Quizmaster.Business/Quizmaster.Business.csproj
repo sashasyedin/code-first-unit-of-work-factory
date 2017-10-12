@@ -52,10 +52,6 @@
       <Project>{6e3b7e5c-32fe-42f9-8e0c-24b5ed0b884f}</Project>
       <Name>Quizmaster.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Quizmaster.Entities\Quizmaster.Entities.csproj">
-      <Project>{a4eca414-9cd9-4e1b-b5ac-7007437141dc}</Project>
-      <Name>Quizmaster.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
