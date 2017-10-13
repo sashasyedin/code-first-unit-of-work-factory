@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Quizmaster.Common.Entities
+namespace Quizmaster.Entities
 {
     [Table("Answer")]
     public class Answer : Entity<int>

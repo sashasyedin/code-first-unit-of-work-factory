@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Quizmaster.Common.Entities
+namespace Quizmaster.Entities
 {
     [Table("TestSectionRelation")]
     public class TestSectionRelation : Entity<int>

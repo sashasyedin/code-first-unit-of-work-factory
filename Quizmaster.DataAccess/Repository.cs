@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using Quizmaster.Common.Contracts;
+using Quizmaster.DataAccess.Contracts;
+using Quizmaster.Entities.Contracts;
 
 namespace Quizmaster.DataAccess
 {
     public class Repository<T> : IRepository<T>
         where T : class, IEntity
     {
-        private readonly DbContext _context;
+        private readonly IDbContext _context;
         private IDbSet<T> _entities;
 
-        public Repository(DbContext context)
+        public Repository(IDbContext context)
         {
             this._context = context;
         }

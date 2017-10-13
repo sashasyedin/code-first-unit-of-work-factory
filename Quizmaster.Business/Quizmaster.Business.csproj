@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CuttingEdge.Conditions, Version=1.2.0.11174, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\CuttingEdge.Conditions.1.2.0.0\lib\NET35\CuttingEdge.Conditions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IQuestionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\QuestionService.cs" />
   </ItemGroup>
@@ -52,6 +56,13 @@
       <Project>{6e3b7e5c-32fe-42f9-8e0c-24b5ed0b884f}</Project>
       <Name>Quizmaster.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quizmaster.Entities\Quizmaster.Entities.csproj">
+      <Project>{ee48fd4d-2b78-4b31-a66b-508fcebe1c80}</Project>
+      <Name>Quizmaster.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

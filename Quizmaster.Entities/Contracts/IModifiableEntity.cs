@@ -1,4 +1,4 @@
-﻿namespace Quizmaster.Common.Contracts
+﻿namespace Quizmaster.Entities.Contracts
 {
     public interface IModifiableEntity
     {

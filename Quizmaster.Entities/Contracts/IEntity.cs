@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Quizmaster.Common.Contracts
+namespace Quizmaster.Entities.Contracts
 {
     public interface IEntity : IModifiableEntity
     {
-        object Id { get; set; }
+        object ID { get; set; }
 
         DateTime CreatedDate { get; set; }
 
@@ -18,6 +18,6 @@ namespace Quizmaster.Common.Contracts
     public interface IEntity<T> : IEntity
         where T : struct
     {
-        new T Id { get; set; }
+        new T ID { get; set; }
     }
 }

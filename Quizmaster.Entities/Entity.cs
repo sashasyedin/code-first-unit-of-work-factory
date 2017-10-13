@@ -1,21 +1,21 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Quizmaster.Common.Contracts;
+using Quizmaster.Entities.Contracts;
 
-namespace Quizmaster.Common.Entities
+namespace Quizmaster.Entities
 {
     public abstract class Entity<T> : IEntity<T>
         where T : struct
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public T Id { get; set; }
+        public T ID { get; set; }
 
-        object IEntity.Id
+        object IEntity.ID
         {
-            get { return this.Id; }
-            set { this.Id = (T)Convert.ChangeType(value, typeof(T)); }
+            get { return this.ID; }
+            set { this.ID = (T)Convert.ChangeType(value, typeof(T)); }
         }
 
         public string Name { get; set; }

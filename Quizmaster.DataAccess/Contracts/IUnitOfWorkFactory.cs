@@ -1,4 +1,4 @@
-﻿namespace Quizmaster.Common.Contracts
+﻿namespace Quizmaster.DataAccess.Contracts
 {
     public interface IUnitOfWorkFactory
     {

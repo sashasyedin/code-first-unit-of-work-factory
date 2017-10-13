@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Quizmaster.Common.Entities
+namespace Quizmaster.Entities
 {
     [Table("Section")]
     public class Section : Entity<int>

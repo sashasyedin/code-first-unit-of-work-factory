@@ -1,16 +1,15 @@
 ﻿using System.Data;
-using System.Data.Entity;
 using CuttingEdge.Conditions;
-using Quizmaster.Common.Contracts;
+using Quizmaster.DataAccess.Contracts;
 
 namespace Quizmaster.DataAccess
 {
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
-        private readonly DbContext _context;
+        private readonly IDbContext _context;
         private readonly IsolationLevel _isolationLevel;
 
-        public UnitOfWorkFactory(DbContext context, IsolationLevel isolationLevel)
+        public UnitOfWorkFactory(IDbContext context, IsolationLevel isolationLevel)
         {
             Condition.Requires(context, nameof(context)).IsNotNull();
             Condition.Requires(isolationLevel, nameof(isolationLevel)).IsNotEqualTo(IsolationLevel.Unspecified);
