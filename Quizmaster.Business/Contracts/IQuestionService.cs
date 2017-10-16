@@ -5,6 +5,6 @@ namespace Quizmaster.Business.Contracts
 {
     public interface IQuestionService
     {
-        IEnumerable<Question> ListQuestions(int sectionID);
+        IEnumerable<Question> ListQuestions();
     }
 }

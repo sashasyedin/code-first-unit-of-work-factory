@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -194,7 +200,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -203,6 +211,18 @@
     <ProjectReference Include="..\Quizmaster.Business\Quizmaster.Business.csproj">
       <Project>{9a109723-1e2d-4b5f-b49e-fa1cdc264f42}</Project>
       <Name>Quizmaster.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quizmaster.Common\Quizmaster.Common.csproj">
+      <Project>{5551fd3f-7966-4a10-8181-45bc86427c03}</Project>
+      <Name>Quizmaster.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quizmaster.DataAccess\Quizmaster.DataAccess.csproj">
+      <Project>{6e3b7e5c-32fe-42f9-8e0c-24b5ed0b884f}</Project>
+      <Name>Quizmaster.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quizmaster.Entities\Quizmaster.Entities.csproj">
+      <Project>{ee48fd4d-2b78-4b31-a66b-508fcebe1c80}</Project>
+      <Name>Quizmaster.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

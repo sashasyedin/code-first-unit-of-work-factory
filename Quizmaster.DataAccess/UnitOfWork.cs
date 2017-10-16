@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Data.Entity;
 using CuttingEdge.Conditions;
 using Quizmaster.DataAccess.Contracts;
 
@@ -9,31 +7,18 @@ namespace Quizmaster.DataAccess
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbContext _context;
-        private readonly DbContextTransaction _transaction;
 
-        public UnitOfWork(IDbContext context, IsolationLevel isolationLevel)
+        public UnitOfWork(IDbContext context)
         {
             Condition.Requires(context, nameof(context)).IsNotNull();
-            Condition.Requires(isolationLevel, nameof(isolationLevel)).IsNotEqualTo(IsolationLevel.Unspecified);
 
             this._context = context;
-            this._transaction = this._context.Database.BeginTransaction(isolationLevel);
-        }
-
-        public void Commit()
-        {
-            this._transaction.Commit();
         }
 
         public void Dispose()
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
-        }
-
-        public void Rollback()
-        {
-            this._transaction.Rollback();
         }
 
         public void SaveChanges()
@@ -46,7 +31,6 @@ namespace Quizmaster.DataAccess
             if (disposing == false)
                 return;
 
-            this._transaction?.Dispose();
             this._context?.Dispose();
         }
     }

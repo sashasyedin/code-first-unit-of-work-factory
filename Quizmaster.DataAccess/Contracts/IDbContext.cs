@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using Quizmaster.Entities.Contracts;
 
 namespace Quizmaster.DataAccess.Contracts
 {
@@ -15,6 +16,6 @@ namespace Quizmaster.DataAccess.Contracts
 
         int SaveChanges();
 
-        IDbSet<T> Set<T>() where T : class;
+        IDbSet<T> Set<T>() where T : class, IEntity;
     }
 }

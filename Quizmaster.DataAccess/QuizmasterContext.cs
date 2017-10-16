@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Quizmaster.DataAccess.Contracts;
+using Quizmaster.Entities;
+using Quizmaster.Entities.Contracts;
 
 namespace Quizmaster.DataAccess
 {
@@ -8,7 +10,7 @@ namespace Quizmaster.DataAccess
     {
         static QuizmasterContext()
         {
-            Database.SetInitializer<QuizmasterContext>(null);
+            Database.SetInitializer(new CreateDatabaseIfNotExists<QuizmasterContext>());
         }
 
         public QuizmasterContext(string connectionString)
@@ -19,7 +21,8 @@ namespace Quizmaster.DataAccess
 
         public string ConnectionString { get; private set; }
 
-        public new IDbSet<T> Set<T>() where T : class
+        public new IDbSet<T> Set<T>()
+            where T : class, IEntity
         {
             return base.Set<T>();
         }
@@ -27,6 +30,16 @@ namespace Quizmaster.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Question>()
+                .HasOptional(q => q.Section)
+                .WithMany(s => s.Questions)
+                .HasForeignKey(q => q.SectionId);
+
+            modelBuilder.Entity<Answer>()
+                .HasRequired(a => a.Question)
+                .WithMany(q => q.Answers)
+                .HasForeignKey(a => a.QuestionId);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

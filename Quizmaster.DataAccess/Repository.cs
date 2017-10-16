@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using CuttingEdge.Conditions;
 using Quizmaster.DataAccess.Contracts;
 using Quizmaster.Entities.Contracts;
 
@@ -12,54 +13,44 @@ namespace Quizmaster.DataAccess
         where T : class, IEntity
     {
         private readonly IDbContext _context;
-        private IDbSet<T> _entities;
+        private readonly IDbSet<T> _entities;
 
         public Repository(IDbContext context)
         {
+            Condition.Requires(context, nameof(context)).IsNotNull();
+
             this._context = context;
+            this._entities = context.Set<T>();
         }
 
         public virtual T Add(T entity)
         {
-            return this.Entities.Add(entity);
+            return this._entities.Add(entity);
         }
 
         public virtual void Delete(T entity)
         {
-            this.Entities.Remove(entity);
+            this._entities.Remove(entity);
         }
 
         public virtual T Get(object id)
         {
-            return this.Entities.Find(id);
+            return this._entities.Find(id);
         }
 
         public virtual IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
-            return this.Entities.Where(predicate);
+            return this._entities.Where(predicate);
         }
 
         public virtual IEnumerable<T> GetAll()
         {
-            return this.Entities;
+            return this._entities;
         }
 
         public virtual void Update(T entity)
         {
             this._context.Entry(entity).State = EntityState.Modified;
-        }
-
-        private IDbSet<T> Entities
-        {
-            get
-            {
-                if (this._entities == null)
-                {
-                    this._entities = this._context.Set<T>();
-                }
-
-                return this._entities;
-            }
         }
     }
 }
