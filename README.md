@@ -1,2 +1,2 @@
-# code-first-migrations-with-wix
-An example of managing EF code first migrations in a setup project
+# code-first-unit-of-work-factory
+An example of managing EF code first migrations using unit of work factory
