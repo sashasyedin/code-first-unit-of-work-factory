@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Newtonsoft.Json;
 using Quizmaster.Business.Contracts;
 
 namespace Quizmaster.Controllers
@@ -12,10 +13,19 @@ namespace Quizmaster.Controllers
             _questionService = questionService;
         }
 
-        public JsonResult ListQuestions()
+        public ContentResult ListQuestions()
         {
             var questions = _questionService.ListQuestions();
-            return Json(questions, JsonRequestBehavior.AllowGet);
+
+            var list = JsonConvert.SerializeObject(
+                questions,
+                Formatting.None,
+                new JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+
+            return Content(list, "application/json");
         }
     }
 }
