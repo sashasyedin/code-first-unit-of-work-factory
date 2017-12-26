@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Web", "Quizmaster.Web\Quizmaster.Web.csproj", "{D164CB0D-D684-431F-8319-8143B402867F}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Business", "Quizmaster.Business\Quizmaster.Business.csproj", "{9A109723-1E2D-4B5F-B49E-FA1CDC264F42}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Entities", "Quizmaster.Entities\Quizmaster.Entities.csproj", "{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.CompositionRoot", "Quizmaster.CompositionRoot\Quizmaster.CompositionRoot.csproj", "{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AAFEB0C-771F-43C6-B0A1-D995AD973D09}
 	EndGlobalSection
 EndGlobal
