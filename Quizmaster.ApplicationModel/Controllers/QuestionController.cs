@@ -1,8 +1,9 @@
 ﻿using System.Web.Mvc;
+using CuttingEdge.Conditions;
 using Newtonsoft.Json;
 using Quizmaster.Business.Contracts;
 
-namespace Quizmaster.Controllers
+namespace Quizmaster.ApplicationModel.Controllers
 {
     public class QuestionController : Controller
     {
@@ -10,12 +11,14 @@ namespace Quizmaster.Controllers
 
         public QuestionController(IQuestionService questionService)
         {
-            _questionService = questionService;
+            Condition.Requires(questionService, nameof(questionService)).IsNotNull();
+
+            this._questionService = questionService;
         }
 
         public ContentResult ListQuestions()
         {
-            var questions = _questionService.ListQuestions();
+            var questions = this._questionService.ListQuestions();
 
             var list = JsonConvert.SerializeObject(
                 questions,
@@ -25,7 +28,7 @@ namespace Quizmaster.Controllers
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
 
-            return Content(list, "application/json");
+            return this.Content(list, "application/json");
         }
     }
 }

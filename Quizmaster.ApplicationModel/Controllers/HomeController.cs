@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Quizmaster.Web.Controllers
+namespace Quizmaster.ApplicationModel.Controllers
 {
     public class HomeController : Controller
     {
@@ -10,20 +10,18 @@ namespace Quizmaster.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            this.ViewBag.Message = "Your application description page.";
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            this.ViewBag.Message = "Your contact page.";
             return View();
         }
     }

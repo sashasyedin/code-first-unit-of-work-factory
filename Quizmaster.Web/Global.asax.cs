@@ -9,10 +9,10 @@ namespace Quizmaster.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            DependencyResolver.SetResolver(new NinjectDependencyResolver());
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
         }
     }
 }
