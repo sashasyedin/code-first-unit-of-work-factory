@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Business", "Quiz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Entities", "Quizmaster.Entities\Quizmaster.Entities.csproj", "{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.CompositionRoot", "Quizmaster.CompositionRoot\Quizmaster.CompositionRoot.csproj", "{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.ApplicationModel", "Quizmaster.ApplicationModel\Quizmaster.ApplicationModel.csproj", "{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
