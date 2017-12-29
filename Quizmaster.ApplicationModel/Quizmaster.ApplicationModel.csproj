@@ -87,6 +87,10 @@
       <Project>{9a109723-1e2d-4b5f-b49e-fa1cdc264f42}</Project>
       <Name>Quizmaster.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quizmaster.Common\Quizmaster.Common.csproj">
+      <Project>{5551fd3f-7966-4a10-8181-45bc86427c03}</Project>
+      <Name>Quizmaster.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quizmaster.Entities\Quizmaster.Entities.csproj">
       <Project>{ee48fd4d-2b78-4b31-a66b-508fcebe1c80}</Project>
       <Name>Quizmaster.Entities</Name>
