@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Web", "Quizmaster.Web\Quizmaster.Web.csproj", "{D164CB0D-D684-431F-8319-8143B402867F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.UI.Web", "src\Quizmaster.UI.Web\Quizmaster.UI.Web.csproj", "{D164CB0D-D684-431F-8319-8143B402867F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Common", "Quizmaster.Common\Quizmaster.Common.csproj", "{5551FD3F-7966-4A10-8181-45BC86427C03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Common", "src\Quizmaster.Common\Quizmaster.Common.csproj", "{5551FD3F-7966-4A10-8181-45BC86427C03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.DataAccess", "Quizmaster.DataAccess\Quizmaster.DataAccess.csproj", "{6E3B7E5C-32FE-42F9-8E0C-24B5ED0B884F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.DataAccess", "src\Quizmaster.DataAccess\Quizmaster.DataAccess.csproj", "{6E3B7E5C-32FE-42F9-8E0C-24B5ED0B884F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Business", "Quizmaster.Business\Quizmaster.Business.csproj", "{9A109723-1E2D-4B5F-B49E-FA1CDC264F42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Business", "src\Quizmaster.Business\Quizmaster.Business.csproj", "{9A109723-1E2D-4B5F-B49E-FA1CDC264F42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Entities", "Quizmaster.Entities\Quizmaster.Entities.csproj", "{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Entities", "src\Quizmaster.Entities\Quizmaster.Entities.csproj", "{EE48FD4D-2B78-4B31-A66B-508FCEBE1C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.ApplicationModel", "Quizmaster.ApplicationModel\Quizmaster.ApplicationModel.csproj", "{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.ApplicationModel", "src\Quizmaster.ApplicationModel\Quizmaster.ApplicationModel.csproj", "{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E2B4C7E-FBAF-43F5-BBFE-4A7CE051DE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Business.Tests", "tests\Quizmaster.Business.Tests\Quizmaster.Business.Tests.csproj", "{F876044C-FFED-43FA-84B6-7169806235F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizmaster.Tests", "tests\Quizmaster.Tests\Quizmaster.Tests.csproj", "{E2C605BA-1761-411A-861C-33774E1D8D55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +51,21 @@ Global
 		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E5CFF77-839C-4F00-9E0C-C418FECCCD95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F876044C-FFED-43FA-84B6-7169806235F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F876044C-FFED-43FA-84B6-7169806235F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F876044C-FFED-43FA-84B6-7169806235F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F876044C-FFED-43FA-84B6-7169806235F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C605BA-1761-411A-861C-33774E1D8D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C605BA-1761-411A-861C-33774E1D8D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C605BA-1761-411A-861C-33774E1D8D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C605BA-1761-411A-861C-33774E1D8D55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F876044C-FFED-43FA-84B6-7169806235F7} = {5E2B4C7E-FBAF-43F5-BBFE-4A7CE051DE59}
+		{E2C605BA-1761-411A-861C-33774E1D8D55} = {5E2B4C7E-FBAF-43F5-BBFE-4A7CE051DE59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8AAFEB0C-771F-43C6-B0A1-D995AD973D09}
