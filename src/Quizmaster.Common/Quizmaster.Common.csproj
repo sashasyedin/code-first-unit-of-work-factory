@@ -50,9 +50,6 @@
     <Compile Include="Utilities\Extensions\EnumExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utilities\Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
